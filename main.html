@@ -1,31 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">    
-    <head>
-        <meta charset="utf-8">
-        <title>Home</title>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-    
-        <div class="sidenav">
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#clients">Clients</a>
-            <a href="#contact">Contact</a>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Minesweeper Documentation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f8f9fa;
+            color: #495057;
+        }
+
+        #nav-panel {
+            flex: 0 0 200px;
+            background-color: #2c3e50;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        #container {
+            flex: 1;
+            max-width: 800px;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        #nav-panel a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #nav-panel a:hover {
+            background-color: #34495e;
+        }
+
+        .example {
+            margin-bottom: 20px;
+            border: 1px solid #dfe4ea;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f4f4f4;
+            overflow-x: auto;
+        }
+
+        .example code {
+            white-space: pre-wrap;
+            display: block;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav-panel">
+        <a href="#board-overview">Top</a>
+        <a href="#controls">Controls</a>
+        <a href="#click-to-reveal">Step 1: Click to Reveal</a>
+        <a href="#use-numbers">Step 2: Use Numbers</a>
+        <a href="#avoid-mines">Step 3: Avoid Mines</a>
+        <a href="#mark-with-flags">Step 4: Mark with Flags</a>
+        <a href="#win-the-game">Step 5: Win the Game</a>
+        <a href="#speed-running">Speed Running Techniques</a>
+    </div>
+
+    <div id="container">
+        <h1 id="board-overview">The Minesweeper Documentation</h1>
+        <p>The Minesweeper board consists of various characters representing different elements. Understanding these characters is crucial for playing the game:</p>
+        <ul>
+            <li><strong>*</strong>: Represents a covered square that may or may not contain a mine.</li>
+            <li><strong>0-8</strong>: Indicates the number of mines in adjacent squares when revealed.</li>
+            <li><strong>F</strong>: A flagged square, marked by the player as a potential mine.</li>
+            <li><strong>M</strong>: Reveals a mine, and the game ends if clicked accidentally.</li>
+        </ul>
+        <div class="example">
+            <code>
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+            </code>
         </div>
-        <main class="main">
-<div class="container">
-            <div class="header">
-                <h1>Home</h1>
-            </div>
-            <div class="content">
-                <p>Home page content goes here.</p>
-            </div>
-            <div class="footer">
-                <p>Footer content goes here.</p>
-            </div>
+
+        <div id="controls">
+            <h2>Controls</h2>
+            <ul>
+                <li><strong>Left Click:</strong> Reveal a square</li>
+                <li><strong>Right Click:</strong> Mark a square with a flag</li>
+            </ul>
         </div>
-        </main>
-        
-    </body>
+
+        <h2 id="click-to-reveal">Step 1: Click to Reveal</h2>
+        <p>Start by left-clicking on a covered square to reveal its content. The grid is initially filled with covered squares, and your goal is to uncover all non-mine squares.</p>
+        <div class="example">
+            <code>
+                0 0 0 0 0 0 0 0
+                1 1 0 0 0 0 1 1
+                * 1 0 0 0 0 1 *
+                * 1 1 1 1 0 1 *
+                * * * * 2 1 2 *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+            </code>
+        </div>
+
+        <h2 id="use-numbers">Step 2: Use Numbers</h2>
+        <p>Numbers on revealed squares indicate the count of mines in adjacent squares. Leverage this information to deduce mine locations. If a square has the number "2," two mines are present in the surrounding eight squares.</p>
+        <div class="example">
+            <code>
+                0 0 0 0 0 0 0 0
+                1 1 0 0 0 0 1 1 <- this is a 1 so there must be a mine below it
+                * 1 0 0 0 0 1 * <- this must be a mine
+                * 1 1 1 1 0 1 1
+                * * * * 2 1 2 *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+            </code>
+        </div>
+
+        <h2 id="avoid-mines">Step 3: Avoid Mines</h2>
+        <p>Caution is crucial. If you accidentally reveal a mine, the game ends. Mines are randomly scattered, making each move a calculated risk. Be strategic and observe the numbers to identify potential mine locations.</p>
+        <div class="example">
+            <code>
+                0 0 0 0 0 0 0 0
+                1 1 0 0 0 0 1 1
+                * 1 0 0 0 0 1 *
+                * 1 1 1 1 0 1 1 <- This must be safe becasue the 1 next to it
+                * * * * 2 1 2 *     is showing that there is only one mine 
+                * * * * * * * *     around it whitch must be the mine above 
+                * * * * * * * *     this one.
+                * * * * * * * *
+            </code>
+        </div>
+
+        <h2 id="mark-with-flags">Step 4: Mark with Flags</h2>
+        <p>Right-click on a square to mark it with a flag if you suspect it contains a mine. Flagging helps keep track of potential mines and avoids accidental clicks.</p>
+        <div class="example">
+            <code>
+                0 0 0 0 0 0 0 0
+                1 1 0 0 0 0 1 1
+                * 1 0 0 0 0 1 F <- This must be a mine so we flag it.
+                * 1 1 1 1 0 1 1
+                * * * * 2 1 2 *
+                * * * * * * * *
+                * * * * * * * *
+                * * * * * * * *
+            </code>
+        </div>
+
+        <h2 id="win-the-game">Step 5: Win the Game</h2>
+        <p>Continue revealing and flagging until all non-mine squares are uncovered. A successful completion reveals a safe configuration.</p>
+        <div class="example">
+            <code>
+                0 0 0 0 0 0 0 0
+                1 1 0 0 0 0 1 1
+                F 1 0 0 0 0 1 F
+                1 1 1 1 1 0 1 1
+                0 0 1 F 2 1 2 1
+                0 0 1 2 3 F 2 F
+                1 1 2 2 F 3 3 1
+                1 F 2 F 3 F 1 0
+            </code>
+        </div>
+
+        <h2 id="speed-running">Speed Running Techniques</h2>
+        <p>If you're aiming for speed, consider the following techniques:</p>
+        <ul>
+            <li><strong>Pattern Recognition:</strong> Learn common mine patterns to quickly identify safe moves.</li>
+            <li><strong>Flagging Strategies:</strong> Develop efficient flagging strategies to mark potential mine locations.</li>
+            <li><strong>Memory Skills:</strong> Improve memory to recall the board's status and avoid revisiting known safe areas.</li>
+            <li><strong>Optimized Clicking:</strong> Practice precise clicking to minimize errors and speed up gameplay.</li>
+        </ul>
+    </div>
+</body>
 </html>
