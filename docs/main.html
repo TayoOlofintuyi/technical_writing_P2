@@ -59,16 +59,7 @@
         <h2 id="use-numbers">Step 2: Use Numbers</h2>
         <p>Numbers on revealed squares indicate the count of mines in adjacent squares. Leverage this information to deduce mine locations. If a square has the number "2," two mines are present in the surrounding eight squares.</p>
         <div class="example">
-            <code>
-                0 0 0 0 0 0 0 0
-                1 1 0 0 0 0 1 1 <- this is a 1 so there must be a mine below it
-                * 1 0 0 0 0 1 * <- this must be a mine
-                * 1 1 1 1 0 1 *
-                * * * * 2 1 2 *
-                * * * * * * * *
-                * * * * * * * *
-                * * * * * * * *
-            </code>
+            <img src="images/this_square_is_a_mine.png" alt="If there is there is only one square around a 1, then that square is a mine.">
         </div>
 
         <h2 id="avoid-mines">Step 3: Avoid Mines</h2>
