@@ -65,16 +65,7 @@
         <h2 id="avoid-mines">Step 3: Avoid Mines</h2>
         <p>Caution is crucial. If you accidentally reveal a mine, the game ends. Mines are randomly scattered, making each move a calculated risk. Be strategic and observe the numbers to identify potential mine locations.</p>
         <div class="example">
-            <code>
-                0 0 0 0 0 0 0 0
-                1 1 0 0 0 0 1 1
-                * 1 0 0 0 0 1 *
-                * 1 1 1 1 0 1 1 <- This must be safe because the 1 next to it
-                * * * * 2 1 2 *     is showing that there is only one mine 
-                * * * * * * * *     around it which must be the mine above 
-                * * * * * * * *     this one.
-                * * * * * * * *
-            </code>
+            <img src="images/this_must_be_safe.png" alt="If there is a known mine around a 1, then any other square around that 1 is safe">
         </div>
 
         <h2 id="mark-with-flags">Step 4: Mark with Flags</h2>
