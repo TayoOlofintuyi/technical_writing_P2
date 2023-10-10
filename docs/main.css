@@ -3,6 +3,7 @@ body {
   }
 
   .dropbtn {
+    background-color: inherit;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -111,6 +112,7 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
+
 
 #container {
     margin-left: 220px;
