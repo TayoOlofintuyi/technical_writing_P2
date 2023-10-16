@@ -14,7 +14,7 @@ body {
   position: relative;
   display: inline-block;
   text-align: left; /* Align the button text to the left */
-  width: 100%; /* Make the button take the full width of its container */
+  width: 200%; /* Make the button take the full width of its container */
 }
 
 .dropdown-content {
@@ -116,7 +116,7 @@ body {
   color: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  text-align: left; /* Add this line to align text to the left */
+  text-align: left;
 }
 
 
