@@ -200,4 +200,10 @@ code {
     background-color: #34495e;
 }
 
+#documentation-credit {
+  font-size: 14px; /* Set your desired smaller font size */
+  font-style: italic; /* Make the text italic */
+  color: #555; /* Set the text color, adjust as needed */
+  margin-top: 10px; /* Add some top margin for spacing */
+}
 
