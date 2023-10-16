@@ -10,19 +10,22 @@
     <div id="nav-panel">
         <a href="#introduction">Minesweeper Documentation</a>
         <a href="#board-overview">Introduction</a>
-        <a href="#controls">Controls</a>
         <a href="#materials">Materials</a>
+        <a href="#controls">Controls</a>
+        
 
-        <div class="dropdown">
-            <button class="dropbtn">Instructions</button>
+        <div id="instructionsBtn" class="dropdown" id="instructionsDropdown">
+            <button class="dropbtn" onclick="toggleDropdown()"><strong>Instructions</strong></button>
             <div class="dropdown-content">
-        <a href="#click-to-reveal">Step 1: Click to Reveal</a>
-        <a href="#use-numbers">Step 2: Use Numbers</a>
-        <a href="#avoid-mines">Step 3: Avoid Mines</a>
-        <a href="#mark-with-flags">Step 4: Mark with Flags</a>
-        <a href="#win-the-game">Step 5: Win the Game</a>
-    </div>
-</div>
+                <a href="#click-to-reveal">Step 1: Click to Reveal</a>
+                <a href="#use-numbers">Step 2: Use Numbers</a>
+                <a href="#avoid-mines">Step 3: Avoid Mines</a>
+                <a href="#mark-with-flags">Step 4: Mark with Flags</a>
+                <a href="#win-the-game">Step 5: Win the Game</a>
+            </div>
+        </div>
+        
+
 
         <a href="#speed-running">Speed Running Techniques</a>
         <a href="#faq">FAQ</a>
@@ -63,7 +66,7 @@
             <li><strong><img src="images/uncovered.png" width="50" height="50"></strong>: Indicates an uncovered square with no mines around it.</li>
             <li><img src="images/uncovered1.png" width="50" height="50">         <img src="images/uncovered2.png" width="50" height="50">         <img src="images/uncovered3.png" width="50" height="50">         <img src="images/uncovered4.png" width="50" height="50">         <img src="images/uncovered5.png" width="50" height="50">         <img src="images/uncovered6.png" width="50" height="50">         <img src="images/uncovered7.png" width="50" height="50">         <img src="images/uncovered8.png" width="50" height="50">: Indicates the number of mines in adjacent squares when revealed.</li>
             <li><strong><img src="images/flag.png" width="50" height="50"></strong>: A flagged square, marked by the player as a potential mine.</li>
-            <li><strong><img src="images/mine.png" width="50" height="50"><img src="images/clicked_mine.png" width="50" height="50"></strong>: A revealed mine and a revealed mine that has been clicked respectfully. Both indicate a game that has ended.</li>
+            <li><strong><img src="images/mine.png" width="50" height="50">         <img src="images/clicked_mine.png" width="50" height="50"></strong>: A revealed mine and a revealed mine that has been clicked respectfully. Both indicate a game that has ended.</li>
         </ul>
         <div class="example">
 
@@ -208,5 +211,22 @@
             terms ensures compliance and proper use of Minesweeper.</p>
 
     </div>
+    <script>
+        // JavaScript to toggle the active class on Instructions dropdown
+        document.getElementById("instructionsDropdown").addEventListener("click", function() {
+            this.classList.toggle("active");
+        });
+    </script>
+    <script>
+        let dropdownActive = false;
+
+        function toggleDropdown() {
+            dropdownActive = !dropdownActive;
+            const dropdownContent = document.querySelector(".dropdown-content");
+            dropdownContent.style.display = dropdownActive ? "block" : "none";
+        }
+    </script>
+    
+    
 </body>
 </html>
