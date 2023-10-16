@@ -13,8 +13,8 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
-  text-align: left; /* Align the button text to the left */
-  width: 200%; /* Make the button take the full width of its container */
+  text-align: left;
+  width: 200%;
 }
 
 .dropdown-content {
@@ -86,8 +86,8 @@ body {
   }
   
   .main {
-    margin-left: 140px; /* Same width as the sidebar + left position in px */
-    font-size: 28px; /* Increased text to enable scrolling */
+    margin-left: 140px;
+    font-size: 28px;
     padding: 0px 10px;
   }
   
@@ -128,7 +128,7 @@ body {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding-left: 240px; /* Add padding to the left to accommodate the fixed nav-panel */
+    padding-left: 240px;
 }
 
 h1, h2, h3 {
@@ -188,7 +188,7 @@ code {
     width: 100%;
     padding: 0px;
     font-size: 16px;
-    margin: 0; /* Set margin to zero */
+    margin: 0;
     transition: background-color 0.3s;
 }
 
@@ -201,9 +201,9 @@ code {
 }
 
 #documentation-credit {
-  font-size: 14px; /* Set your desired smaller font size */
-  font-style: italic; /* Make the text italic */
-  color: #555; /* Set the text color, adjust as needed */
-  margin-top: 10px; /* Add some top margin for spacing */
+  font-size: 14px; 
+  font-style: italic; 
+  color: #555; 
+  margin-top: 10px; 
 }
 
